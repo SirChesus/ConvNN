@@ -8,11 +8,14 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+
 Images = np.load(os.getenv("IMAGES"))
 Labels = pd.read_csv(os.getenv("LABELS")).values.squeeze()
 
+'''
 print(f"Image dataset shape: {Images.shape}")   # ( Number of samples, Height, Width, Colour (1 | 3) )
 print(f"Label dataset shape: {Labels.shape}")  # (Number of samples)
+'''
 
 class ImageDataset(Dataset):
     def __init__(self, images, labels):

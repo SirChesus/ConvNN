@@ -26,7 +26,7 @@ print(f"Detected number of classes: {num_classes}")
 
 
 class CNN(nn.Module):
-    def __init__(self, in_channels):
+    def __init__(self, in_channels, num_classes):
         super().__init__()
 
         self.features = nn.Sequential(
@@ -52,13 +52,13 @@ class CNN(nn.Module):
             nn.Linear(256, num_classes)
         )
     
-    def foward(self, x):
+    def forward(self, x):
         x = self.features(x)
         x = self.classifier(x)
         return x
 
 
-def train_model(train_loader, test_loader, in_channels, num_classes, epochs=5, device=device):
+def train_model(train_loader, in_channels, num_classes, epochs=5, device=device):
     model = CNN(in_channels=in_channels, num_classes=num_classes).to(device)
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr=0.001)
@@ -80,9 +80,13 @@ def train_model(train_loader, test_loader, in_channels, num_classes, epochs=5, d
 
         print(f"Epoch {epoch+1}, Loss: {running_loss/len(train_loader): .4f}")
 
+    return model
 
+
+def evaluate_model(model, test_loader, device=device):
     model.eval()
     correct, total = 0,0
+
     with torch.no_grad():
         for images, labels in test_loader:
             images, labels = images.to(device), labels.to(device)
@@ -92,7 +96,13 @@ def train_model(train_loader, test_loader, in_channels, num_classes, epochs=5, d
             correct += (predicted == labels).sum().item()
 
     print(f"Test Accuracy: {100 *correct / total:.2f}%")
-    return model
+    
 
-        
+def save_model(model):
+    print("Model saved as cnn_model.pth")
+    return torch.save(model.state_dict(), "cnn_model.pth")
+    
 
+model = train_model(train_loader, in_channels=3, num_classes=10)
+evaluate_model(model, test_loader)
+saved_model = save_model(model)
