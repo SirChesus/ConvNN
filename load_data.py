@@ -8,7 +8,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-
 Images = np.load(os.getenv("IMAGES"))
 Labels = pd.read_csv(os.getenv("LABELS")).values.squeeze()
 
