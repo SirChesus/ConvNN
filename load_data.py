@@ -59,9 +59,3 @@ if __name__ == "__main__":
     print(f"Batch images shape {imgs.shape}")
     print(f"Batch labels shape: {labels.shape}")
     print(f"Example labels: {labels[:10]}")
-
-
-
-
-    
-

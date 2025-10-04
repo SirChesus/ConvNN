@@ -22,7 +22,7 @@ for _, labels in test_loader:
 
 labels_list = torch.cat(labels_list)    # concatenate all label tensors into 1D tensor
 num_classes = int(torch.unique(labels_list).numel())
-print(f"Detected number of classes: {num_classes}")
+# print(f"Detected number of classes: {num_classes}")
 
 
 class CNN(nn.Module):
