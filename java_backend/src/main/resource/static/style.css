@@ -1,0 +1,22 @@
+body
+{
+    font-family: sans-serif;
+    text-align: center;
+    margin-top: 40px;
+    background-color: black;
+}
+
+form   
+{
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    width: 300px;
+    background: white;
+}
+
+button
+{
+    margin-top: 10px;
+    padding: 8px 16px;
+}

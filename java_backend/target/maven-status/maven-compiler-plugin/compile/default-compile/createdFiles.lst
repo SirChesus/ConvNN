@@ -1,0 +1,4 @@
+com\example\cnnapp\CnnAppApplication.class
+com\example\cnnapp\controller\UploadController.class
+main\java\com\example\cnnapp\util\ImagePreprocessor.class
+com\example\cnnapp\service\PredictService.class

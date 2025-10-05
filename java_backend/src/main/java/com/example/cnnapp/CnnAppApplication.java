@@ -1,4 +1,4 @@
-package main.java.com.example.cnnapp;
+package com.example.cnnapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

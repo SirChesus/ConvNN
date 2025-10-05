@@ -1,10 +1,10 @@
-package main.java.com.example.cnnapp.controller;
+package com.example.cnnapp.controller;
 
 import com.example.cnnapp.service.PredictService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.wed.bind.annotation.*;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 @Controller

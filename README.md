@@ -1,9 +1,7 @@
 MyProject/
 ├── CNN.py
 ├── load_data.py
-├── model.pth
-├── model/
-│   └── model.onnx
+├── model.pth              
 ├── java_backend/
 │   ├── pom.xml
 │   └── src/
@@ -11,20 +9,17 @@ MyProject/
 │           ├── java/
 │           │   └── com/example/cnnapp/
 │           │       ├── CnnAppApplication.java
-│           │       ├── controller/
-│           │       │   └── UploadController.java
-│           │       ├── service/
-│           │       │   └── PredictService.java
-│           │       └── util/
-│           │           └── ImagePreprocessor.java
+│           │       ├── controller/UploadController.java
+│           │       ├── service/PredictService.java
+│           │       └── util/ImagePreprocessor.java
 │           └── resources/
-│               ├── templates/
-│               │   └── index.html
-│               └── static/
-│                   └── style.css
+│               ├── templates/index.html
+│               └── static/style.css
 
 
 
+
+-----CNN.py-----
 Conv2D -> creates grids of number, higher values = stronger activations (detection of edges/texture, etc.)
     - in_channels = number of channels in the input image (1 - Greyscale, 3 - RGB)
     - out_channels = number of filters (feature maps) the layer learns
