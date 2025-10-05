@@ -1,0 +1,13 @@
+package main.java.com.example.cnnapp;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+public class CnnAppApplication
+{
+    public static void main(String[] args)
+    {
+        SpringApplication.run(CnnAppApplication.class, args);
+    }
+}
+
