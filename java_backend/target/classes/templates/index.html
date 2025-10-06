@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymelead.org">
+<head>
+    <meta charset="UTF-8">
+    <title>CNN Image Classifier</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+    <h1>Upload an Image</h1>
+    <form method="POST" action="/upload" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*" required />
+        <button type="submit">Classify</button>
+    </form>
+
+    <div th:if="${result}">
+        <h3>Result:</h3>
+        <p th:text="${result}"></p>
+    </div>
+</body>
+</html>

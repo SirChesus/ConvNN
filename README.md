@@ -48,6 +48,41 @@ RESULTS:
     6  4
     9  8
 
+-----java_backend-----  
+pom.xml (Maven Project Object Model)
+    - top-level XML setup ->
+    - parent config -> Inherits default configs from the offical Spring Boot parent project
+        - spring-boot-starter-parent provides default plugin versions, pre-configured compiler settings, standard dependency managment
+        (empty relative path means look up online, not locally)
+
+    -project metadata -> defines project identity & build type
+        - <groupId> -> organization or namespace (reverse domain name) -> com.example
+        - <artifactId> -> name of project's artifact -> JAR filename (cnnapp)
+        - <version> -> project version #
+        - <packaging> -> specifies build output type:
+            - jar for backend apps
+            - war for deplyable web archives
+        
+    -properties -> defines variables used thru the file
+
+    -dependencies
+        - spring-boot-starter-web -> Needed to start a web server
+            - adds Spring MVC (controllers, RESR API's)
+            - includes embedded Tomcat server
+            - Handles incomping HTTP requests
+        - spring-boot-starter-thymeleaf -> Needed to render .html
+            - Adds Thymeleaf, Spring's html template engine
+            - Lets you use ${variable} expressions from properties in .html
+            - Automatically loads templates from templates\ 
+        -onnxruntime -> needed to load & run CNN model
+            - provides OrtEnviroment, OrtSession, OnnxTensor
+    
+    -build section -> without this need to manually handle classpaths & run configs
+        - packages dependencies+code into one runnable JAR
+        - Enables mvn spring-boot:run
+        - adds startup hooks (@SpringBootApplication)
+
+
 
 
 
